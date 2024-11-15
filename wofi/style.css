@@ -1,0 +1,82 @@
+@define-color accent rgba(118, 176, 159, 0.8);
+@define-color txt    #ebe7e1;
+@define-color bg     rgba(10, 6, 5, 0.8);
+@define-color bg2    #a4a19d; 
+
+* {
+  font-family: "JetBrains Mono Nerd Font"; 
+  font-size: 14.5px;
+}
+
+/* Window */
+#window {
+  background-color: @bg;
+  opacity: 1;
+  margin: 0;
+  padding: 10px;
+  /*border: 2px solid @accent;*/
+  border-radius: 15px;
+  animation: slideIn 0.5s ease-in-out both;
+}
+
+/* Inner Box */
+#inner-bokx {
+  background-color: @bg;
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Outer Box */
+#outer-boyx {
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  background-color: @bg;
+}
+
+/* Scroll */
+#scroll {
+  margin: 3px;
+  padding: 10px;
+  border: none;
+}
+
+/* Input */
+#input {
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  color: rgb(186, 115, 131);
+  background-color: @bg;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Text */
+#text {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  color: @txt;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+#entry {
+  margin: 0 10px;
+  padding: 3px 5px;
+}
+
+/* Selected Entry */
+#entry:selected {
+  background-color: @accent;
+  border: none;
+  border-radius: 15px;
+}
+
+#entry:selected #text {
+  color: #000;
+}

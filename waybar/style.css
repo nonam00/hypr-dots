@@ -1,0 +1,108 @@
+/* The css styles are supposed to represent how the modules look 
+* starting from left to right as closely as possible*/
+
+@import url("../../.cache/wal/colors-waybar.css");
+
+* {
+  border: none;
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+/* Overarching styles */
+
+window#waybar {
+  background: transparent;
+  color: #fff; 
+}
+
+tooltip {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+}
+
+/* Left modules */
+
+#custom-logo,
+#custom-weather,
+#tray,
+#window {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 0px 10px;
+  margin: 3px 0px;
+}
+
+/* Overwritting the previous padding style on 'custom-logo' 
+* to give proper padding to nerd font icon */
+#custom-logo {
+  padding: 0px 15px 0px 10px;
+}
+
+/* If no windows are present on the screen,
+* this module will be transparent */
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+/* Center modules */
+
+#workspaces {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 0px 5px;
+  margin: 4px 10px;
+}
+
+#workspaces button {
+  padding: 0px 9px;
+  margin: 6px 2px;
+  border-radius: 20px;
+  background: transparent;
+  transition: all 0.5s cubic-bezier(0.11, 1.09, 0.6, 0.96);
+}
+
+#workspaces button.active {
+  margin: 6px 2px;
+  padding: 0px 35px;
+  /*background-color: @color11;*/
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#workspaces button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  /*background-color: @color13;*/
+}
+
+/* Right modules */
+
+/* These modules are children of group/system */
+#battery,
+#network,
+#cpu,
+#disk,
+#memory,
+#pulseaudio {
+  margin: 0px 10px;
+}
+
+/* group/system */
+#system {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  margin: 3px 0px;
+}
+
+#clock {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 0px 10px;
+  margin: 3px 0px;
+}
+
+#mpris {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 0 10px;
+  margin: 3px 0;
+}

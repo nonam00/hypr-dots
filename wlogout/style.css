@@ -16,16 +16,13 @@ button {
   border-radius: 20px;
   transition: border 0.4s ease-in-out;
   margin: 5px;
-	/*background-color: #1E1E1E;
-	border-style: solid;
-	border-width: 1px;*/
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 25%;
 }
 
 button:focus, button:active, button:hover {
-	border: solid 4px rgb(200, 200, 200);
+	border: solid 4px #AFB3BD;
   border-radius: 20px;
 	outline-style: none;
 }

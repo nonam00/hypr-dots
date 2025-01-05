@@ -1,6 +1,6 @@
-@define-color accent rgba(118, 176, 159, 0.8);
-@define-color txt    #ebe7e1;
-@define-color bg     rgba(10, 6, 5, 0.8);
+@define-color accent #EBBCBA;
+@define-color txt    #fff;
+@define-color bg     #2E3440;
 @define-color bg2    #a4a19d; 
 
 * {
@@ -15,17 +15,17 @@
   margin: 0;
   padding: 10px;
   /*border: 2px solid @accent;*/
-  border-radius: 15px;
+  border-radius: 10px;
   animation: slideIn 0.5s ease-in-out both;
 }
 
 /* Inner Box */
-#inner-bokx {
+#inner-box {
   background-color: @bg;
   margin: 5px;
   padding: 10px;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   animation: fadeIn 0.5s ease-in-out both;
 }
 
@@ -34,24 +34,25 @@
   margin: 10px;
   padding: 10px;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   background-color: @bg;
 }
 
 /* Scroll */
 #scroll {
   margin: 3px;
-  padding: 10px;
+  padding: 0px;
   border: none;
+  border-radius: 10px;
 }
 
 /* Input */
 #input {
-  margin: 10px;
+  margin: 20px;
   padding: 10px;
   border: none;
-  border-radius: 15px;
-  color: rgb(186, 115, 131);
+  border-radius: 10px;
+  color: @accent;
   background-color: @bg;
   animation: fadeIn 0.5s ease-in-out both;
 }
@@ -68,6 +69,8 @@
 #entry {
   margin: 0 10px;
   padding: 3px 5px;
+  border: none;
+  border-radius: 10px;
 }
 
 /* Selected Entry */

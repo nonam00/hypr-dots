@@ -6,7 +6,6 @@
     "on-click": "exec wlogout --protocol layer-shell"
   },
   "custom/weather": {
-    "format": "{}",
     "tooltip": true,
     "interval": 60,
     "exec": "~/.config/waybar/scripts/waybar-wttr.py --custom-indicator '{temp_C}ºC'",
@@ -18,12 +17,9 @@
   },
   // Center modules
   "hyprland/workspaces": {
-    "active-only": false,
-    "all-outputs": false,
-    "disable-scroll": false,
-    "format": "",
+    "format": "{icon}",
     "format-icons": {
-      "active": "",
+      "active": "",
       "default": "",
       "sort-by-number": true,
       "urgent": ""
@@ -98,8 +94,8 @@
   },
   "mpris": {
     "title-len": 40,
-    "interval":1,
-    "album-len":0,
+    "interval": 1,
+    "album-len": 0,
     "max-len": 60,
     "format": "{player_icon} {artist} - {title}",
     "format-paused": "{player_icon} {artist} - {title}",

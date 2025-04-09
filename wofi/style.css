@@ -1,7 +1,12 @@
-@define-color accent #EBBCBA;
+/*@define-color accent #EBBCBA;
 @define-color txt    #fff;
 @define-color bg     #2E3440;
-@define-color bg2    #a4a19d; 
+@define-color bg2    #a4a19d; */
+
+@define-color accent rgb(171, 184, 185); 
+@define-color txt    #fff;
+@define-color bg     #000;
+@define-color bg2    transparent; 
 
 * {
   font-family: "JetBrains Mono Nerd Font"; 
@@ -14,6 +19,7 @@
   opacity: 1;
   margin: 0;
   padding: 10px;
+  border: none;
   /*border: 2px solid @accent;*/
   border-radius: 10px;
   animation: slideIn 0.5s ease-in-out both;

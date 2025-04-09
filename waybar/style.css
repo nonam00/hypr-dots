@@ -9,14 +9,14 @@
 }
 
 window#waybar {
-  background: #1F2932;
-  color: #AFB3BD;
+  background: rgba(0,0,0,0.7);
+  color: #fff; 
   border-radius: 5px;
 }
 
 tooltip {
-  background-color: #1F2932;
-  color: #AFB3BD;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0);
   border-radius: 5px;
 }
 
@@ -47,30 +47,23 @@ window#waybar.empty #window {
 /* Center modules */
 
 #workspaces {
+  border-radius: 5px;
   background: transparent;
-  border-radius: 8px;
-  border: 1px solid #AFB3BD;
-  padding: 0px 5px;
-  margin: 4px 10px;
 }
 
 #workspaces button {
-  padding: 0px 9px;
-  margin: 6px 2px;
-  border-radius: 20px;
-  background: transparent;
+  border-radius: 45px;
+  color: transparent;
   transition: all 0.5s cubic-bezier(0.11, 1.09, 0.6, 0.96);
 }
 
 #workspaces button.active {
-  margin: 6px 2px;
-  padding: 0px 35px;
   /*background-color: @color11;*/
-  background-color: #AFB3BD;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 #workspaces button:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4);
   /*background-color: @color13;*/
 }
 
@@ -102,6 +95,7 @@ window#waybar.empty #window {
 
 #mpris {
   background: transparent;
+  border-radius: 8px;
   border-radius: 8px;
   padding: 0 10px;
   margin: 3px 0;

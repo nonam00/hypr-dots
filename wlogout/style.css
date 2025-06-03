@@ -1,7 +1,5 @@
 * {
 	background-image: none;
-	box-shadow: none;
-  font-family: "JetBrainsMono Nerd Font";
 }
 
 window {
@@ -9,12 +7,14 @@ window {
 }
 
 button {
+  font-family: 'JetBrainsMono Nerd Font';
 	text-decoration-color: #FFFFFF;
   color: #FFFFFF;
   font-size: 17px;
-  border: solid 4px rgba(0,0,0,0);
+  border: none;
   border-radius: 20px;
-  transition: border 0.4s ease-in-out;
+  box-shadow: none;
+  transition: box-shadow 0.4s ease-in-out;
   margin: 5px;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -22,7 +22,7 @@ button {
 }
 
 button:focus, button:active, button:hover {
-	border: solid 4px #AFB3BD;
+  box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.3);
   border-radius: 20px;
 	outline-style: none;
 }

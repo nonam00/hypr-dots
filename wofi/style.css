@@ -1,11 +1,6 @@
-/*@define-color accent #EBBCBA;
-@define-color txt    #fff;
-@define-color bg     #2E3440;
-@define-color bg2    #a4a19d; */
-
 @define-color accent rgb(171, 184, 185); 
 @define-color txt    #fff;
-@define-color bg     #000;
+@define-color bg     rgba(43, 42, 37, 0.9);
 @define-color bg2    transparent; 
 
 * {
@@ -21,13 +16,13 @@
   padding: 10px;
   border: none;
   /*border: 2px solid @accent;*/
-  border-radius: 10px;
   animation: slideIn 0.5s ease-in-out both;
 }
 
 /* Inner Box */
 #inner-box {
-  background-color: @bg;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0.8;
   margin: 5px;
   padding: 10px;
   border: none;
@@ -41,7 +36,7 @@
   padding: 10px;
   border: none;
   border-radius: 10px;
-  background-color: @bg;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /* Scroll */
@@ -59,7 +54,7 @@
   border: none;
   border-radius: 10px;
   color: @accent;
-  background-color: @bg;
+  background-color: rgba(0, 0, 0, 0);
   animation: fadeIn 0.5s ease-in-out both;
 }
 
@@ -83,7 +78,7 @@
 #entry:selected {
   background-color: @accent;
   border: none;
-  border-radius: 15px;
+  border-radius: 8px;
 }
 
 #entry:selected #text {

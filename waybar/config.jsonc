@@ -1,26 +1,92 @@
-[  
-  {
-    "height": 25,
-    "spacing": 10,
-    "layer": "top",
-    "position": "top",
-    "margin-top": 3,
-    "margin-left": 5,
-    "margin-right": 5,
-    "include": [
-      "~/.config/waybar/modules.json"
-    ],
-    "modules-left": [
-      "custom/logo",
-      "hyprland/workspaces"
-    ],
-    "modules-center": [
-      "mpris"
-    ],
-    "modules-right": [
-      "custom/updates",
-      "group/system",
-      "clock"
-    ]
-  }
-]
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 5, // Waybar height (to be removed for auto height)
+    "margin": "10 15 0 15",
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "hyprland/language"],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": ["pulseaudio", "custom/mem", "network", "battery"],
+
+
+    //***************************
+    //*  Modules configuration  *
+    //***************************
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+        },
+    },
+
+    "hyprland/language": {
+        "format": "{} ",
+	      "min-length": 5,
+	      "tooltip": true
+    },
+
+    "clock": {
+        "tooltip-format": "{:%Y %B}\n<tt>{calendar}</tt>",
+        "format": "{:%a, %d %b, %I:%M %p}"
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "$HOME/.config/waybar/scripts/wttr.py",
+        "return-type": "json"
+    },
+
+    "network": {
+        "format-wifi": "{signalStrength}%  ",
+        "format-ethernet":" ",
+        "format-disconnected": " ",
+        "tooltip-format-disconnected": "Error",
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-ethernet": "{ifname}",
+        "on-click": "kitty nmtui"
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "reverse-scrolling": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+    	  "format-muted": "󰝟 ",
+	      "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "on-click": "pavucontrol",
+    },
+
+    "custom/mem": {
+        "format": "{} ",
+        "interval": 3,
+        "exec": "free -h | awk '/Mem:/{printf $3}'",
+        "tooltip": false,
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false,
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+    },
+}

@@ -1,102 +1,173 @@
-/* The css styles are supposed to represent how the modules look 
-* starting from left to right as closely as possible*/
-
-@import url("../../.cache/wal/colors-waybar.css");
+@define-color bg #2b2a25;
+@define-color txt #fff;
+@define-color unactive #7c818c;
 
 * {
-  border: none;
-  font-family: "JetBrainsMono Nerd Font";
+    border: none;
+    border-radius: 0;
+    font-family: JetBrainsMono Nerd Font;
+    min-height: 5px;
 }
 
 window#waybar {
-  background: rgba(0,0,0,0.7);
-  color: #fff; 
-  border-radius: 5px;
+    background: transparent;
 }
 
-tooltip {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: rgba(255, 255, 255, 0);
-  border-radius: 5px;
+window#waybar.hidden {
+    opacity: 0.2;
 }
-
-/* Left modules */
-
-#custom-logo,
-#custom-weather,
-#tray,
-#window {
-  background: transparent;
-  border-radius: 8px;
-  padding: 0px 10px;
-  margin: 3px 0px;
-}
-
-/* Overwritting the previous padding style on 'custom-logo' 
-* to give proper padding to nerd font icon */
-#custom-logo {
-  padding: 0px 15px 0px 10px;
-}
-
-/* If no windows are present on the screen,
-* this module will be transparent */
-window#waybar.empty #window {
-  background-color: transparent;
-}
-
-/* Center modules */
 
 #workspaces {
-  border-radius: 5px;
-  background: transparent;
+    margin-right: 8px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg;
+    opacity: 0.9;
 }
 
 #workspaces button {
-  border-radius: 45px;
-  color: transparent;
-  transition: all 0.5s cubic-bezier(0.11, 1.09, 0.6, 0.96);
+    transition: none;
+    color: @unactive;
+    background: transparent;
+    padding: 5px;
+    font-size: 18px;
+}
+
+#workspaces button.persistent {
+    color: @unactive;
+    font-size: 12px;
 }
 
 #workspaces button.active {
-  /*background-color: @color11;*/
-  color: rgba(255, 255, 255, 0.7);
+  color: @txt;
 }
 
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-  color: rgba(255, 255, 255, 0.4);
-  /*background-color: @color13;*/
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border-radius: inherit;
+    color: @bg;
+    background: @unactive;
 }
 
-/* Right modules */
-
-/* These modules are children of group/system */
-#battery,
-#network,
-#cpu,
-#disk,
-#memory,
-#pulseaudio {
-  margin: 0px 10px;
+#workspaces button.focused {
+    color: white;
 }
 
-/* group/system */
-#system {
-  background: transparent;
-  border-radius: 8px;
-  margin: 3px 0px;
+#language {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: @txt;
+    background: @bg; 
+    opacity: 0.9;
+}
+
+#custom-pacman {
+   margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: @txt;
+    background: @bg; 
+    opacity: 0.9;
 }
 
 #clock {
-  background: transparent;
-  border-radius: 8px;
-  padding: 0px 10px;
-  margin: 3px 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px 0px 0px 10px;
+    transition: none;
+    color: @txt;
+    background: @bg;
+    opacity: 0.9;
 }
 
-#mpris {
-  background: transparent;
-  border-radius: 8px;
-  border-radius: 8px;
-  padding: 0 10px;
-  margin: 3px 0;
+#custom-weather {
+    padding-right: 16px;
+    border-radius: 0px 10px 10px 0px;
+    transition: none;
+    color: @txt;
+    background: @bg;
+    opacity: 0.9;
+}
+
+#pulseaudio {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: @txt;
+    background: @bg;
+    opacity: 0.9;
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+#custom-mem {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: @txt;
+    background: @bg;
+    opacity: 0.9;
+}
+
+#network {
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: @txt;
+    background: @bg;
+    opacity: 0.9;
+}
+
+#battery {
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;
+    transition: none;
+    color: @txt;
+    background: @bg;
+    opacity: 0.9;
+}
+
+#battery.charging {
+    color: @txt;
+    background-color: #26A65B;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #ffbe61;
+    color: black;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: @txt;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: @txt;
+        color: #000000;
+    }
 }
